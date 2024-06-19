@@ -12,8 +12,8 @@
 .buttons_d0696b {
     margin: 6px 6px 6px auto !important;
     margin-left: auto;
-    max-width: calc(40px * 4); /* CHANGE HERE: 6 columns when expanded */
-    min-width: calc(40px * 4); /* CHANGE HERE: 2 columns when collapsed */
+    max-width: calc(40px * 4);
+    min-width: calc(40px * 4);
     width: min-content;
     display: flex;
     gap: 6px 0;
