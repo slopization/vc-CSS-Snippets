@@ -1,7 +1,6 @@
 /*
  * @name Un-Simplify Bios in Simplified Profiles
  * @description Un-Simplify Bios in Simplified Profiles
- * @license MIT
  */
 
 [class*=userPopoutInner_] > [class*=body_] [class^="descriptionClamp_"] {
