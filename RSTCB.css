@@ -17,22 +17,26 @@
     height: fit-content;
     justify-content: right;
 }
+
 .buttons_d0696b .buttonContainer_d0696b,
 .buttons_d0696b > .button_dd4f85 {
     width: 40px;
 }
+
 .separator_a06035 {
     margin: 0;
     justify-content: center;
     width: 40px;
 }
+
 .separator_a06035::before {
     display: none;
 }
-.separator_a06035 .innerButton_a06035 {
 
+.separator_a06035 .innerButton_a06035 {
     margin: 0;
 }
+
 .textArea_d0696b {
     width: fit-content;
     flex-grow: 1.01;
