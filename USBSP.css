@@ -1,0 +1,35 @@
+/*
+ * @name Un-Simplify Bios in Simplified Profiles
+ * @description Un-Simplify Bios in Simplified Profiles
+ * @license MIT
+ */
+
+[class*=userPopoutInner_] > [class*=body_] [class^="descriptionClamp_"] {
+  -webkit-line-clamp: unset;
+  max-height: 112px;
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  &&::-webkit-scrollbar {
+    width: 15px;
+    height: 15px;
+  }
+  &&::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  }
+
+  &&::-webkit-scrollbar-track {
+  border: 2px solid var(--scrollbar-thin-track);
+  background-color: var(--scrollbar-thin-track);
+  border-color: var(--scrollbar-thin-track);
+  }
+
+  &&::-webkit-scrollbar-thumb {
+  background: var(--profile-body-divider-color);
+  background-clip: padding-box;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  min-height: 40px;
+  }
+}
