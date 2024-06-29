@@ -1,0 +1,8 @@
+/*
+ * @name Full Height GIF/Sticker/Emoji Menu
+ * @description Full Height GIF/Sticker/Emoji Menu
+ */
+
+[class^="positionContainer_"] {
+  height: calc(100vh - 180px);
+}
