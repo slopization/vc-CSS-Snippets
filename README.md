@@ -21,4 +21,5 @@ Feel free to use any of the snippets provided in this repository. However, be aw
 Since this is a personal project, contributions are not expected. However, if you have suggestions or improvements, feel free to open an issue or a pull request.
 
 ## License
-This project is licensed under the MIT License.
+
+This repository is not licensed for distribution, and the snippets are shared for personal use only.
