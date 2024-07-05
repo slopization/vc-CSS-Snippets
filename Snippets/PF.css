@@ -1,0 +1,23 @@
+/**
+ * @name Pretendard
+ * @description Pretendard FONT Setting's
+*/
+
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css");
+
+:root {
+    --Font-Used: 'Pretendard Variable', var;
+    --Font-Size: var ;
+    --Font-Style: var ;
+    --Font-Weight: var ;
+    --Font-Variant: var ;
+}
+
+*:not([class*="hljs"]):not(code) {
+    font-family: var(--Font-Used)!important;
+    font-style: var(--Font-Style)!important;
+    font-weight: normal(--Font-Weight)!important;
+    font-variant: normal(--Font-Variant)!important;
+}
+
+.markup:not(code) { font-size: var(--Font-Size)!important; }
