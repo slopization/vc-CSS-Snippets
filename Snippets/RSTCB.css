@@ -3,7 +3,7 @@
  * @description collapse chat bar buttons to take up less space when writing long messages
  */
 
-.buttons_d0696b {
+ .buttons_d0696b {
     margin: 6px 6px 6px auto !important;
     margin-left: auto;
     max-width: calc(40px * 4);

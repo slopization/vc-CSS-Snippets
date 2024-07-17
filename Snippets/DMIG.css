@@ -3,7 +3,7 @@
  * @description Turns the special tabs on top of your dm list into an icon grid.
  */
 
-[class^=privateChannels_] [class^=content_] {
+ [class^=privateChannels_] [class^=content_] {
     display: grid;
     height: unset !important;
     grid-template-columns: 1fr 1fr;
