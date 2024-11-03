@@ -3,7 +3,7 @@
  * @description collapse chat bar buttons to take up less space when writing long messages
  */
 
- .buttons_d0696b {
+ .buttons_bdf0de {
     margin: 6px 6px 6px auto !important;
     margin-left: auto;
     max-width: calc(40px * 4);
@@ -17,8 +17,8 @@
     justify-content: right;
 }
 
-.buttons_d0696b .buttonContainer_d0696b,
-.buttons_d0696b > .button_dd4f85 {
+.buttons_bdf0de .buttonContainer_bdf0de,
+.buttons_bdf0de > .button_dd4f85 {
     width: 40px;
 }
 
@@ -36,7 +36,7 @@
     margin: 0;
 }
 
-.textArea_d0696b {
+.textArea_bdf0de {
     width: fit-content;
     flex-grow: 1.01;
 }
