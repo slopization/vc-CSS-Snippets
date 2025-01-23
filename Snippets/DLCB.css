@@ -3,7 +3,7 @@
  * @description dual-line chatbox
  */
 
-class^="channelTextArea_"] [class^="inner_"] {
+[class^="channelTextArea_"] [class^="inner_"] {
   flex-direction: column;
      [class^="separator_"] {
       margin-left: auto;
@@ -17,4 +17,5 @@ class^="channelTextArea_"] [class^="inner_"] {
 [class^="attachWrapper_"] {
   top: calc(100% - 73px);
   position: fixed;
+}n: fixed;
 }
