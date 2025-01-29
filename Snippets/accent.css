@@ -1,0 +1,71 @@
+:root {
+	/* color of links */
+	--accent-1: hsl(190, 80%, 60%);
+	/* color of unread dividers and some indicators */
+	--accent-2: hsl(190, 80%, 48%);
+	/* color of accented buttons */
+	--accent-3: hsl(190, 80%, 42%);
+	/* color of accented buttons when hovered */
+	--accent-4: hsl(190, 80%, 36%);
+	/* color of accented buttons when clicked */
+	--accent-5: hsl(190, 80%, 30%);
+	/* color of green online dot, change to #23a55a for default green */
+	--online-indicator: var(--accent-2);
+	/* color of mentions and messages that mention you */
+	--mention: hsla(190, 80%, 52%, 0.1);
+	/* color of mentions and messages that mention you when hovered */
+	--mention-hover: hsla(190, 80%, 52%, 0.05);
+}
+
+.activeButtonChild_a06035 {
+	color: var(--accent-2);
+}
+.container_b2ca13 /* user panel button strikethroughs */,
+.numberBadge__40d6f /* unread number badge */,
+.toolbar_e44302 /* toolbar button strikethroughs */ {
+	--status-danger: var(--accent-2);
+}
+.expandedFolderIconWrapper_bc7085 > svg {
+	color: var(--accent-2) !important;
+}
+.divider_fc5f50 /* unread divider */ {
+	--status-danger: var(--accent-3);
+}
+.message_d5deea.mentioned_d5deea:before /* mention message left edge */,
+.container_cebd1c.checked_cebd1c /* settings checkbuttons */ {
+	background: var(--accent-3) !important;
+}
+path[fill='rgba(35, 165, 90, 1)'] {
+	fill: var(--accent-3);
+}
+.container_aef5fd:last-child .icon_aef5fd /* explore discoverable servers icon color */ {
+	background-color: #3ba55c;
+	filter: hue-rotate(56deg) saturate(1.43);
+}
+.container_aef5fd:first-child .icon_aef5fd {
+	filter: hue-rotate(304deg) saturate(0.84) brightness(1.2);
+}
+rect[fill='#23a55a'] {
+	fill: var(--online-indicator) !important;
+}
+
+.theme-dark {
+	--background-mentioned: var(--mention);
+	--background-mentioned-hover: var(--mention-hover);
+	--control-brand-foreground: var(--accent-2);
+	--mention-background: var(--mention);
+	--mention-foreground: var(--accent-1);
+
+	--brand-430: var(--accent-3);
+	--brand-500: var(--accent-3);
+	--brand-560: var(--accent-4);
+	--brand-600: var(--accent-5);
+
+	--green-330: var(--accent-1);
+	--green-360: var(--accent-3);
+	--green-430: var(--accent-4);
+	--green-500: var(--accent-4);
+	--green-530: var(--accent-5);
+
+	--brand-experiment-15a: var(--mention);
+}
