@@ -14,9 +14,6 @@
 @import url('https://refact0r.github.io/midnight-discord/build/midnight.css');
 
 body {
-    /* font, change to '' for default discord font */
-    --font: 'figtree';
-
     /* sizes */
     --gap: 12px; /* spacing between panels */
     --divider-thickness: 4px; /* thickness of unread messages divider and highlighted message borders */
@@ -27,7 +24,7 @@ body {
     --dms-icon-svg-transition: 0.4s ease; /* transition for the dms icon */
 
     /* top bar options */
-    --move-top-bar-buttons: on; /* turn on to move inbox button to the server list (recommend setting top bar height to 24px) */
+    --move-top-bar-buttons: off; /* turn on to move inbox button to the server list (recommend setting top bar height to 24px) */
     --custom-app-top-bar-height: 32px; /* height of the titlebar/top bar (default is 36px)*/
 
     /* window controls */
@@ -65,7 +62,7 @@ body {
     --chatbar-padding: 8px; /* padding of the chatbar */
 
     /* other options */
-    --small-user-panel: off; /* turn on to make the user panel smaller like in old discord */
+    --small-user-panel: on; /* turn on to make the user panel smaller like in old discord */
 }
 
 /* color options */
