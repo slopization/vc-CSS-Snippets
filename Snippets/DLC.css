@@ -2,7 +2,7 @@
  * @name, @description dual-line chatbox
  */
 
-[class^="channelTextArea_"] [class^="inner_"] {
+ [class^="channelTextArea_"] [class^="inner_"] {
   flex-direction: column;
      [class^="separator_"] {
       margin-left: auto;

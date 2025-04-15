@@ -2,7 +2,7 @@
  * @name, @description colored role pills
  */
 
-[class^="role_"] {
+ [class^="role_"] {
   position: relative;
   overflow: hidden;
   > [class^="roleRemoveButton_"],
