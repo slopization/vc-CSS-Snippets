@@ -1,0 +1,28 @@
+/**
+ * @name Settings As Overlay
+ * @description Displays settings as a thread-like overlay on the right side of the main window.
+*/
+
+.baseLayer__960e4.stop-animations {
+    opacity: 1 !important;
+    transform: scale(1) !important;
+}
+
+.layer__960e4:not(.baseLayer__960e4) {
+    background: rgba(0, 0, 0, 0);
+    pointer-events: none;
+    align-items: flex-end;
+}
+
+.standardSidebarView__23e6b {
+    flex-direction: row-reverse;
+    left: unset;
+    pointer-events: auto;
+    box-shadow: var(--elevation-high);
+}
+
+.sidebarRegionScroller__23e6b,
+.sidebarRegion__23e6b,
+.contentRegion__23e6b {
+    flex: 0 0 auto;
+}
