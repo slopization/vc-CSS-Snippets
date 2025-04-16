@@ -4,11 +4,11 @@
 */
 
 .baseLayer__960e4.stop-animations {
+    opacity: 1 !important;
     transform: scale(1) !important;
 }
 
 .layer__960e4:not(.baseLayer__960e4) {
-    background: rgba(0, 0, 0, 0);
     pointer-events: none;
     align-items: flex-end;
 }
@@ -25,3 +25,4 @@
 .contentRegion__23e6b {
     flex: 0 0 auto;
 }
+
