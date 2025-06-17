@@ -1,0 +1,55 @@
+/*
+ * @name Username
+ * @description Applies a bubble to usernames that abide by role color
+ */
+
+ :root {
+  --enable-border: 0;
+}
+
+/* ShowMeYourName plugin */
+.vc-smyn-suffix {
+  color: currentColor !important;
+  opacity: 0.5;
+
+  &::before {
+    content: "| @" !important;
+  }
+
+  &::after {
+    content: "" !important;
+  }
+}
+
+/* Username */
+.cozy_c19a55 .header_c19a55 {
+  margin-bottom: 4px;
+}
+
+/* Username */
+.username_c19a55,
+.base_b88801 .text_b88801 strong,
+.name__841c8,
+.mention.interactive,
+[class^="repliedMessage_"] > .username_c19a55,
+.member__5d473 .username_d272d6 {
+  filter: brightness(1.2);
+  background: color-mix(in srgb, currentColor 20%, transparent);
+  border: calc(1px * var(--enable-border)) solid;
+  /*font-weight: bold;*/
+  margin-right: 4px;
+  padding: 0 6px;
+  border-radius: 6px;
+  display: inline-flex;
+
+  &:hover {
+    text-decoration: none;
+    background: color-mix(in srgb, currentColor 40%, transparent);
+  }
+}
+
+.username_c19a55::after {
+  position: relative;
+  margin: 0 0 0 8px;
+  color: inherit;
+}
