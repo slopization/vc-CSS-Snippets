@@ -1,23 +1,127 @@
 /**
- * @name Pretendard
- * @description Pretendard FONT Setting's
+ * @name Pretendard for Vencord
+ * @description Pretendard 폰트를 Discord의 모든 곳에 적용하여 최상의 가독성을 제공하는 테마입니다.
 */
 
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css");
 
 :root {
-    --Font-Used: 'Pretendard Variable', var;
-    --Font-Size: var ;
-    --Font-Style: var ;
-    --Font-Weight: var ;
-    --Font-Variant: var ;
+    --font-pretendard: 'Pretendard Variable', sans-serif;
+    --font-size-base: 16px;
+    --font-weight-thin: 100;
+    --font-weight-extralight: 200;
+    --font-weight-light: 300;
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    --font-weight-extrabold: 800;
+    --font-weight-black: 900;
 }
 
-*:not([class*="hljs"]):not(code) {
-    font-family: var(--Font-Used)!important;
-    font-style: var(--Font-Style)!important;
-    font-weight: normal(--Font-Weight)!important;
-    font-variant: normal(--Font-Variant)!important;
+/* --- 전체 폰트 적용 --- */
+:not([class*="hljs"]):not(code) {
+    font-family: var(--font-pretendard) !important;
 }
 
-.markup:not(code) { font-size: var(--Font-Size)!important; }
+/* --- 기본 마크업 및 메시지 --- */
+.markup:not(code),
+.messageContent-2t3eCI {
+    font-size: var(--font-size-base) !important;
+    font-weight: var(--font-weight-regular) !important;
+}
+
+/* --- 헤더 및 제목 --- */
+h1, h2, h3, h4, h5,
+.header-2g-4_V,
+.title-3_b6N-,
+.heading-1_Js-9,
+.heading-2_6JbWJ {
+    font-family: var(--font-pretendard) !important;
+    font-weight: var(--font-weight-bold) !important;
+}
+
+/* --- 채널 및 길드 목록 --- */
+.name-3_Dsmg, /* 채널 이름 */
+.name-3V3-2A, /* 길드 이름 */
+.channelName-3KPsGw,
+.guildName-2_v3fC,
+.headerText-2z4IhQ {
+    font-family: var(--font-pretendard) !important;
+    font-weight: var(--font-weight-semibold) !important;
+}
+
+.topic-11oB4P, /* 채널 주제 */
+.text-sm-normal-3Zj306,
+.description-3_EGyq {
+    font-family: var(--font-pretendard) !important;
+    font-weight: var(--font-weight-light) !important;
+}
+
+/* --- 사용자 정보 및 팝업 --- */
+.username-2b1r56,
+.userTag-32_27-of,
+.nameTag-3_gGuk,
+.userPopout-2j1gM4 .headerName-27sA22,
+.profile-3Ci-rP .userTag-32_27-of {
+    font-family: var(--font-pretendard) !important;
+    font-weight: var(--font-weight-semibold) !important;
+}
+
+.body-3iLsc4, /* 사용자 팝업 본문 */
+.aboutMeBody-34d3Pk {
+    font-family: var(--font-pretendard) !important;
+    font-weight: var(--font-weight-regular) !important;
+}
+
+/* --- 설정 및 UI 요소 --- */
+.side-2ur1Qk .item-3_Hmjd, /* 설정 사이드바 */
+.nav-2_A2iM .tab-bar-item-2aCH2s,
+.button-38aScr,
+.input-2z42oC,
+.placeholder-1_m_C1 {
+    font-family: var(--font-pretendard) !important;
+    font-weight: var(--font-weight-medium) !important;
+}
+
+/* --- 채팅 입력창 --- */
+.slateContainer-3Qkn2x {
+    font-size: var(--font-size-base) !important;
+}
+
+/* --- 그 외 다양한 클래스에 적용 --- */
+.embedTitle-3_80cI, .embedFooter-3yVd2b,
+.reactionCount-2_GgAh,
+.roleName-3_v50c,
+.member-3-37aP .name-3_Dsmg,
+.title-3-d249B,
+.autocomplete-3l1O2W,
+.autocompleteRow-1e0SR9,
+.option-Uc0D9l,
+.label-2g0g_X,
+.lookFilled-1Gx00P, .lookOutlined-3yKVGo, .lookLink-15mF_6,
+.select-Zz0Ic_,
+.contents-3ca1mk,
+.header-3i_C44,
+.tab-2-da-2,
+.container-1r6BKw .name-3_Dsmg,
+.container-ZMc96U .name-3_Dsmg,
+.channel-1Shao0,
+.category-3_f307,
+.privateChannels-1nO12o .channel-1Shao0,
+.searchBar-2_Yu-C .search-bar-inner .public-DraftEditor-content,
+.header-3_UP_l,
+.scroller-3_YDR8 .header-3_UP_l,
+.title-1_TkpM,
+.text-2-s55R,
+.peopleListItem-u6dGxF,
+.nowPlayingColumn-1e_oE7,
+.card-FDVHQ_,
+.profile-3Ci-rP .headerInfo-1e-5_2,
+.tabBody-2dcb2c,
+.layer-1_b27M .header-1R_YfC,
+.modal-3c3bKg .header-1R_YfC,
+.modal-3c3bKg .footer-2gL1pp,
+.tooltip-1Tf2dD {
+    font-family: var(--font-pretendard) !important;
+}
