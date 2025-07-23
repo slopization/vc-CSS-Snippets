@@ -26,7 +26,7 @@
 
 /* --- 기본 마크업 및 메시지 --- */
 .markup:not(code),
-.messageContent-2t3eCI {
+.messageContent_c19a55 {
     font-size: var(--font-size-base) !important;
     font-weight: var(--font-weight-regular) !important;
 }
@@ -46,7 +46,7 @@ h1, h2, h3, h4, h5,
 .name-3V3-2A, /* 길드 이름 */
 .channelName-3KPsGw,
 .guildName-2_v3fC,
-.headerText-2z4IhQ {
+.headerText_c19a55 {
     font-family: var(--font-pretendard) !important;
     font-weight: var(--font-weight-semibold) !important;
 }
@@ -78,7 +78,7 @@ h1, h2, h3, h4, h5,
 .side-2ur1Qk .item-3_Hmjd, /* 설정 사이드바 */
 .nav-2_A2iM .tab-bar-item-2aCH2s,
 .button-38aScr,
-.input-2z42oC,
+.input_df4dd0,
 .placeholder-1_m_C1 {
     font-family: var(--font-pretendard) !important;
     font-weight: var(--font-weight-medium) !important;
@@ -105,16 +105,16 @@ h1, h2, h3, h4, h5,
 .header-3i_C44,
 .tab-2-da-2,
 .container-1r6BKw .name-3_Dsmg,
-.container-ZMc96U .name-3_Dsmg,
-.channel-1Shao0,
+.container__9293f .name-3_Dsmg,
+.channel__972a0,
 .category-3_f307,
-.privateChannels-1nO12o .channel-1Shao0,
+.privateChannels-1nO12o .channel__972a0,
 .searchBar-2_Yu-C .search-bar-inner .public-DraftEditor-content,
 .header-3_UP_l,
 .scroller-3_YDR8 .header-3_UP_l,
 .title-1_TkpM,
 .text-2-s55R,
-.peopleListItem-u6dGxF,
+.peopleListItem_cc6179,
 .nowPlayingColumn-1e_oE7,
 .card-FDVHQ_,
 .profile-3Ci-rP .headerInfo-1e-5_2,
