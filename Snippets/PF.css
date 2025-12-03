@@ -32,7 +32,11 @@
 }
 
 /* --- 헤더 및 제목 --- */
-h1, h2, h3, h4, h5,
+h1,
+h2,
+h3,
+h4,
+h5,
 .header-2g-4_V,
 .title-3_b6N-,
 .heading-1_Js-9,
@@ -42,8 +46,10 @@ h1, h2, h3, h4, h5,
 }
 
 /* --- 채널 및 길드 목록 --- */
-.name-3_Dsmg, /* 채널 이름 */
-.name-3V3-2A, /* 길드 이름 */
+.name-3_Dsmg,
+/* 채널 이름 */
+.name-3V3-2A,
+/* 길드 이름 */
 .channelName-3KPsGw,
 .guildName-2_v3fC,
 .headerText_c19a55 {
@@ -51,7 +57,8 @@ h1, h2, h3, h4, h5,
     font-weight: var(--font-weight-semibold) !important;
 }
 
-.topic-11oB4P, /* 채널 주제 */
+.topic-11oB4P,
+/* 채널 주제 */
 .text-sm-normal-3Zj306,
 .description-3_EGyq {
     font-family: var(--font-pretendard) !important;
@@ -68,14 +75,16 @@ h1, h2, h3, h4, h5,
     font-weight: var(--font-weight-semibold) !important;
 }
 
-.body-3iLsc4, /* 사용자 팝업 본문 */
+.body-3iLsc4,
+/* 사용자 팝업 본문 */
 .aboutMeBody-34d3Pk {
     font-family: var(--font-pretendard) !important;
     font-weight: var(--font-weight-regular) !important;
 }
 
 /* --- 설정 및 UI 요소 --- */
-.side-2ur1Qk .item-3_Hmjd, /* 설정 사이드바 */
+.side-2ur1Qk .item-3_Hmjd,
+/* 설정 사이드바 */
 .nav-2_A2iM .tab-bar-item-2aCH2s,
 .button-38aScr,
 .input_df4dd0,
@@ -90,7 +99,8 @@ h1, h2, h3, h4, h5,
 }
 
 /* --- 그 외 다양한 클래스에 적용 --- */
-.embedTitle-3_80cI, .embedFooter-3yVd2b,
+.embedTitle-3_80cI,
+.embedFooter-3yVd2b,
 .reactionCount-2_GgAh,
 .roleName-3_v50c,
 .member-3-37aP .name-3_Dsmg,
@@ -99,7 +109,9 @@ h1, h2, h3, h4, h5,
 .autocompleteRow-1e0SR9,
 .option-Uc0D9l,
 .label-2g0g_X,
-.lookFilled-1Gx00P, .lookOutlined-3yKVGo, .lookLink-15mF_6,
+.lookFilled-1Gx00P,
+.lookOutlined-3yKVGo,
+.lookLink-15mF_6,
 .select-Zz0Ic_,
 .contents-3ca1mk,
 .header-3i_C44,

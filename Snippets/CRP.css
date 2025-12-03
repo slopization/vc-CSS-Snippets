@@ -2,29 +2,39 @@
  * @name, @description colored role pills
  */
 
- [class^="role_"] {
+[class^="role_"] {
   position: relative;
   overflow: hidden;
-  > [class^="roleRemoveButton_"],
-  > div > [class^="roleRemoveButtonCanRemove_"]
-  {
+
+  >[class^="roleRemoveButton_"],
+  >div>[class^="roleRemoveButtonCanRemove_"] {
     position: static;
-    > [class^="roleCircle_"]::before {
+
+    >[class^="roleCircle_"]::before {
       content: "";
       position: absolute;
-      top: 0;       left: 0;
-      width: 100%;  height: 100%;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
       background-color: inherit;
       opacity: 0.2;
       z-index: 0;
     }
   }
-  > [class^="roleName_"] { z-index: 1; }
+
+  >[class^="roleName_"] {
+    z-index: 1;
+  }
+
   [class^="roleRemoveIcon_"] {
-    left: calc(
-      4px +     /* Pill padding */
-      1px +     /* "Remove Role" */
-      4px +     /* Circle margin */
-      12px/2);  /* Circle size */
+    left: calc(4px +
+        /* Pill padding */
+        1px +
+        /* "Remove Role" */
+        4px +
+        /* Circle margin */
+        12px/2);
+    /* Circle size */
   }
 }

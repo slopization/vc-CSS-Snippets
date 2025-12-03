@@ -2,6 +2,6 @@
  * @name, @description Hide Quests UI/UX
  */
 
- section[class^="panels_"]>div[class^="mask_"] {
+section[class^="panels_"]>div[class^="mask_"] {
     display: none;
 }
