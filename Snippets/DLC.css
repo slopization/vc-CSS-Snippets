@@ -14,7 +14,7 @@
     margin-left: 32px;
 }
 [class^="attachWrapper_"] {
-  top: calc(100% - 74px);
+  top: calc(100% - 65px);
   position: fixed;
 }
 
