@@ -6,29 +6,29 @@
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css');
 
 :root {
-    --font-pretendard: 'Pretendard Variable', sans-serif;
-    --font-size-base: 16px;
-    --font-weight-thin: 100;
-    --font-weight-extralight: 200;
-    --font-weight-light: 300;
-    --font-weight-regular: 400;
-    --font-weight-medium: 500;
-    --font-weight-semibold: 600;
-    --font-weight-bold: 700;
-    --font-weight-extrabold: 800;
-    --font-weight-black: 900;
+  --font-pretendard: 'Pretendard Variable', sans-serif;
+  --font-size-base: 16px;
+  --font-weight-thin: 100;
+  --font-weight-extralight: 200;
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+  --font-weight-black: 900;
 }
 
 /* --- 전체 폰트 적용 --- */
 :not([class*='hljs']):not(code) {
-    font-family: var(--font-pretendard) !important;
+  font-family: var(--font-pretendard) !important;
 }
 
 /* --- 기본 마크업 및 메시지 --- */
 .markup:not(code),
 .messageContent_c19a55 {
-    font-size: var(--font-size-base) !important;
-    font-weight: var(--font-weight-regular) !important;
+  font-size: var(--font-size-base) !important;
+  font-weight: var(--font-weight-regular) !important;
 }
 
 /* --- 헤더 및 제목 --- */
@@ -41,8 +41,8 @@ h5,
 .title-3_b6N-,
 .heading-1_Js-9,
 .heading-2_6JbWJ {
-    font-family: var(--font-pretendard) !important;
-    font-weight: var(--font-weight-bold) !important;
+  font-family: var(--font-pretendard) !important;
+  font-weight: var(--font-weight-bold) !important;
 }
 
 /* --- 채널 및 길드 목록 --- */
@@ -53,16 +53,16 @@ h5,
 .channelName-3KPsGw,
 .guildName-2_v3fC,
 .headerText_c19a55 {
-    font-family: var(--font-pretendard) !important;
-    font-weight: var(--font-weight-semibold) !important;
+  font-family: var(--font-pretendard) !important;
+  font-weight: var(--font-weight-semibold) !important;
 }
 
 .topic-11oB4P,
 /* 채널 주제 */
 .text-sm-normal-3Zj306,
 .description-3_EGyq {
-    font-family: var(--font-pretendard) !important;
-    font-weight: var(--font-weight-light) !important;
+  font-family: var(--font-pretendard) !important;
+  font-weight: var(--font-weight-light) !important;
 }
 
 /* --- 사용자 정보 및 팝업 --- */
@@ -71,15 +71,15 @@ h5,
 .nameTag-3_gGuk,
 .userPopout-2j1gM4 .headerName-27sA22,
 .profile-3Ci-rP .userTag-32_27-of {
-    font-family: var(--font-pretendard) !important;
-    font-weight: var(--font-weight-semibold) !important;
+  font-family: var(--font-pretendard) !important;
+  font-weight: var(--font-weight-semibold) !important;
 }
 
 .body-3iLsc4,
 /* 사용자 팝업 본문 */
 .aboutMeBody-34d3Pk {
-    font-family: var(--font-pretendard) !important;
-    font-weight: var(--font-weight-regular) !important;
+  font-family: var(--font-pretendard) !important;
+  font-weight: var(--font-weight-regular) !important;
 }
 
 /* --- 설정 및 UI 요소 --- */
@@ -89,13 +89,13 @@ h5,
 .button-38aScr,
 .input_df4dd0,
 .placeholder-1_m_C1 {
-    font-family: var(--font-pretendard) !important;
-    font-weight: var(--font-weight-medium) !important;
+  font-family: var(--font-pretendard) !important;
+  font-weight: var(--font-weight-medium) !important;
 }
 
 /* --- 채팅 입력창 --- */
 .slateContainer-3Qkn2x {
-    font-size: var(--font-size-base) !important;
+  font-size: var(--font-size-base) !important;
 }
 
 /* --- 그 외 다양한 클래스에 적용 --- */
@@ -135,5 +135,5 @@ h5,
 .modal-3c3bKg .header-1R_YfC,
 .modal-3c3bKg .footer-2gL1pp,
 .tooltip-1Tf2dD {
-    font-family: var(--font-pretendard) !important;
+  font-family: var(--font-pretendard) !important;
 }

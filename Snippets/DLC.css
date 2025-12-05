@@ -3,23 +3,23 @@
  */
 
 [class^='channelTextArea_'] [class^='inner_'] {
-    flex-direction: column;
+  flex-direction: column;
 
-    [class^='separator_'] {
-        margin-left: auto;
-    }
+  [class^='separator_'] {
+    margin-left: auto;
+  }
 }
 
 [class^='inner_']:has([class^='attachWrapper_']) > [class^='buttons_'] {
-    margin-left: 32px;
+  margin-left: 32px;
 }
 
 [class^='attachWrapper_'] {
-    top: calc(100% - 65px);
-    position: fixed;
+  top: calc(100% - 65px);
+  position: fixed;
 }
 
 .emoji__8ac07 {
-    width: 14px !important;
-    height: 14px !important;
+  width: 14px !important;
+  height: 14px !important;
 }
