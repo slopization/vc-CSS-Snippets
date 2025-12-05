@@ -14,9 +14,7 @@
 @import url('https://refact0r.github.io/midnight-discord/build/midnight.css');
 
 body {
-    font-weight: 400
-        /* normal text font weight. DOES NOT AFFECT BOLD TEXT */
-    ;
+    font-weight: 400 /* normal text font weight. DOES NOT AFFECT BOLD TEXT */;
 
     /* sizes */
     --gap: 12px;

@@ -3,7 +3,7 @@
  * @description Pretendard 폰트를 Discord의 모든 곳에 적용하여 최상의 가독성을 제공하는 테마입니다.
 */
 
-@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css");
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css');
 
 :root {
     --font-pretendard: 'Pretendard Variable', sans-serif;
@@ -20,7 +20,7 @@
 }
 
 /* --- 전체 폰트 적용 --- */
-:not([class*="hljs"]):not(code) {
+:not([class*='hljs']):not(code) {
     font-family: var(--font-pretendard) !important;
 }
 

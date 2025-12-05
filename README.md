@@ -4,7 +4,7 @@ A compilation of CSS snippets for Discord and its custom clients.
 
 ## About
 
-This repository is a collection of various CSS snippets that I have gathered for personal use to enhance and customize the appearance of Discord and its custom clients. The primary purpose of this repository is to serve as a personal reference. 
+This repository is a collection of various CSS snippets that I have gathered for personal use to enhance and customize the appearance of Discord and its custom clients. The primary purpose of this repository is to serve as a personal reference.
 
 Please note that the original authorship of some code snippets may belong to other developers, and I have posted them here for convenience.
 
