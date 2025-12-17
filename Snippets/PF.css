@@ -26,7 +26,7 @@
 
 /* --- 기본 마크업 및 메시지 --- */
 .markup:not(code),
-.messageContent_c19a55 {
+.c19a557985eb7793-messageContent {
   font-size: var(--font-size-base) !important;
   font-weight: var(--font-weight-regular) !important;
 }
@@ -52,7 +52,7 @@ h5,
 /* 길드 이름 */
 .channelName-3KPsGw,
 .guildName-2_v3fC,
-.headerText_c19a55 {
+.c19a557985eb7793-headerText {
   font-family: var(--font-pretendard) !important;
   font-weight: var(--font-weight-semibold) !important;
 }
@@ -117,16 +117,16 @@ h5,
 .header-3i_C44,
 .tab-2-da-2,
 .container-1r6BKw .name-3_Dsmg,
-.container__9293f .name-3_Dsmg,
-.channel__972a0,
+._9293f6b2fc12398a-container .name-3_Dsmg,
+._972a0d22c8afa7f0-channel,
 .category-3_f307,
-.privateChannels-1nO12o .channel__972a0,
+.privateChannels-1nO12o ._972a0d22c8afa7f0-channel,
 .searchBar-2_Yu-C .search-bar-inner .public-DraftEditor-content,
 .header-3_UP_l,
 .scroller-3_YDR8 .header-3_UP_l,
 .title-1_TkpM,
 .text-2-s55R,
-.peopleListItem_cc6179,
+.cc61794aab086a2e-peopleListItem,
 .nowPlayingColumn-1e_oE7,
 .card-FDVHQ_,
 .profile-3Ci-rP .headerInfo-1e-5_2,
