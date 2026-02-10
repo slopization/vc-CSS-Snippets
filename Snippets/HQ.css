@@ -3,5 +3,5 @@
  */
 
 section[class^='panels_'] > div[class^='mask_'] {
-  display: none;
+    display: none;
 }
