@@ -14,19 +14,19 @@
   --mention-hover: hsla(190, 80%, 52%, 0.05);
 }
 
-.activeButtonChild_aa63ab {
+.activeButtonChild_plpOf8 {
   color: var(--accent-2);
 }
 
-.folderGroup__48112.isExpanded__48112 .folderIconWrapper__48112 svg {
+.folderGroup_RTMSuZ.isExpanded_RTMSuZ .folderIconWrapper_RTMSuZ svg {
   color: var(--accent-2) !important;
 }
 
-.divider__908e2 {
+.divider_4TfzT5 {
   --divider-color: var(--accent-3);
 }
 
-.message__5126c.mentioned__5126c::before {
+.message_SY_P2T.mentioned_SY_P2T::before {
   background: var(--accent-3) !important;
 }
 

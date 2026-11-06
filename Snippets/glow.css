@@ -3,31 +3,31 @@
  * @description Adds an accent glow to unread markers, badges, sliders and muted icons (based on refact0r's css-snippets)
  */
 
-.divider__908e2.isUnread__908e2 .unreadPill__908e2,
-.folderGroup__48112.isExpanded__48112 .folderIconWrapper__48112 path,
+.divider_4TfzT5.isUnread_4TfzT5 .unreadPill_4TfzT5,
+.folderGroup_RTMSuZ.isExpanded_RTMSuZ .folderIconWrapper_RTMSuZ path,
 path[fill='var(--status-danger)'],
-.redIcon_e0923d,
-.strikethrough_e0923d {
+.redIcon__WEKcz,
+.strikethrough__WEKcz {
   filter: drop-shadow(0 0 4px var(--accent-2));
 }
 
-.folderGroup__48112.isExpanded__48112 .folderIconWrapper__48112 svg,
-.bar_ec237e {
+.folderGroup_RTMSuZ.isExpanded_RTMSuZ .folderIconWrapper_RTMSuZ svg,
+.bar_p3RiOL {
   overflow: visible;
 }
 
-.barFill_ec237e {
+.barFill_p3RiOL {
   border-radius: 4px;
 }
 
-.divider__908e2.isUnread__908e2,
-.newMessagesBar__0f481,
-.numberBadge__463b7,
-.mention__3b95d,
-.barFill_ec237e {
+.divider_4TfzT5.isUnread_4TfzT5,
+.newMessagesBar_j9Vvzj,
+.numberBadge_lMvXrQ,
+.mention_oJAkDB,
+.barFill_p3RiOL {
   box-shadow: 0 0 5px 0.3px var(--accent-2);
 }
 
-.divider__908e2.isUnread__908e2 .content__908e2 {
+.divider_4TfzT5.isUnread_4TfzT5 .content_4TfzT5 {
   text-shadow: 0 0 5px var(--accent-2);
 }
