@@ -1,5 +1,6 @@
-/*
- * @name, @description dual-line chatbox
+/**
+ * @name Dual-Line Chatbox
+ * @description Moves the chatbox buttons to a second line below the text input
  */
 
 [class^='channelTextArea_'] [class^='inner_'] {
@@ -15,11 +16,6 @@
 }
 
 [class^='attachWrapper_'] {
-  top: calc(100% - 65px);
   position: fixed;
-}
-
-.emoji__8ac07 {
-  width: 14px !important;
-  height: 14px !important;
+  top: calc(100% - 65px);
 }
