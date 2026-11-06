@@ -43,13 +43,14 @@ imply any affiliation with or endorsement by Discord Inc.
 
 The links use the `refs/heads/main` form; the shorter `main/` form did not load in Vencord.
 
-The server list keeps Discord's own padding at its edges, and the channel list keeps its usual width. To change the
-number of server columns or the space between icons, add this below the imports:
+The server list keeps Discord's own padding at its edges, and the channel list keeps its usual width. By default the
+folder backgrounds of neighbouring columns sit 2px apart. To change the number of server columns or the space between
+icons, add this below the imports:
 
 ```css
 :root body {
   --server-columns: 3;
-  --server-column-gap: 12px;
+  --server-column-gap: 16px;
 }
 ```
 

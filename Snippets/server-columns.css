@@ -5,7 +5,7 @@
 
 :root body {
   --server-columns: 3;
-  --server-column-gap: 12px;
+  --server-column-gap: calc(var(--guildbar-folder-size, 48px) - var(--guildbar-avatar-size) + 2px);
   --server-column-cell: calc(var(--guildbar-avatar-size) + var(--server-column-gap));
   --custom-guild-list-width: calc(
     var(--server-column-cell) * var(--server-columns) - var(--server-column-gap) + var(--custom-guild-list-padding) *
