@@ -1,0 +1,45 @@
+/**
+ * @name Gradient Status
+ * @description Tints DM and member list rows with a gradient in the user's status color (based on ukriu's cssCord)
+ */
+
+:root {
+  --gDM-online: linear-gradient(to right, rgb(68, 105, 68), transparent);
+  --gDM-offline: linear-gradient(to right, rgb(66, 66, 66), transparent);
+  --gDM-dnd: linear-gradient(to right, rgb(130, 70, 70), transparent);
+  --gDM-idle: linear-gradient(to right, rgb(135, 105, 75), transparent);
+  --gDM-streaming: linear-gradient(to right, rgb(63, 33, 88), transparent);
+  --gDM-border-radius: 12px;
+}
+
+ul > li > [class*='interactive_'],
+div > [class*='layout_'] {
+  margin: 0.3px;
+  border-radius: var(--gDM-border-radius);
+}
+
+[class*='memberInner_'][class*='layout_'] {
+  width: 100%;
+}
+
+:is([class^='link_'], [class^='memberInner']) {
+  &:has([mask*='online']) {
+    background: var(--gDM-online);
+  }
+
+  &:has([mask*='offline']) {
+    background: var(--gDM-offline);
+  }
+
+  &:has([mask*='dnd']) {
+    background: var(--gDM-dnd);
+  }
+
+  &:has([mask*='idle']) {
+    background: var(--gDM-idle);
+  }
+
+  &:has([mask*='streaming']) {
+    background: var(--gDM-streaming);
+  }
+}
