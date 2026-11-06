@@ -23,9 +23,10 @@ jobs:
           node --input-type=module - <<'EOF'
           import { appendFile, readdir, readFile, writeFile } from 'node:fs/promises';
 
-          const STABLE = 'https://raw.githubusercontent.com/itmesarah/DiscordClasses/main/stableclasses.json';
+          const DUMPS = 'https://raw.githubusercontent.com/itmesarah/DiscordClasses/main';
           const CHANGES = 'https://raw.githubusercontent.com/SyndiShanX/Update-Classes/main/Changes.txt';
-          const HASHED = /\.(-?[A-Za-z_][\w-]*?_{1,2}[0-9a-f]{5,6})(?![\w-])/g;
+          const HASHED = /\.(-?[A-Za-z][\w-]*?_(?:_[0-9a-f]{5}|[0-9a-f]{6}|[A-Za-z0-9_-]{6}))(?![\w-])/g;
+          const readable = (c) => c.replace(/_[A-Za-z0-9_-]{6}$/, '');
 
           const get = async (url) => {
             const response = await fetch(url);
@@ -33,13 +34,43 @@ jobs:
             return response.text();
           };
 
-          const live = new Set();
-          for (const module of Object.values(JSON.parse(await get(STABLE)))) {
-            for (const value of Object.values(module)) {
-              if (typeof value === 'string') for (const name of value.split(' ')) if (name) live.add(name);
+          const classSets = (dump) => {
+            const out = new Map();
+            for (const [mid, mod] of Object.entries(dump)) {
+              if (!mod || typeof mod !== 'object') continue;
+              const values = Object.values(mod).filter((v) => typeof v === 'string');
+              if (values.length) out.set(mid, [...new Set(values.flatMap((v) => v.split(' ').filter(Boolean)))]);
             }
-          }
+            return out;
+          };
+
+          const previous = classSets(JSON.parse(await get(`${DUMPS}/stableclasses.json`)));
+          const current = classSets(JSON.parse(await get(`${DUMPS}/canaryclasses.json`)));
+          const live = new Set([...current.values()].flat());
           if (live.size < 10000) throw new Error(`class list looks truncated: ${live.size} classes`);
+
+          const owner = new Map();
+          for (const [mid, classes] of previous) for (const c of classes) if (!owner.has(c)) owner.set(c, mid);
+          const currentNames = [...current].map(([mid, classes]) => ({ classes, names: new Set(classes.map(readable)) }));
+
+          const byModule = (cls) => {
+            const mid = owner.get(cls);
+            if (!mid) return [];
+            const name = readable(cls);
+            const pick = (classes) => [...new Set(classes.filter((c) => readable(c) === name))];
+            const same = current.get(mid);
+            if (same && pick(same).length) return pick(same);
+            const names = new Set(previous.get(mid).map(readable));
+            let best = null;
+            for (const c of currentNames) {
+              if (!c.names.has(name)) continue;
+              let shared = 0;
+              for (const n of names) if (c.names.has(n)) shared++;
+              const score = shared / (names.size + c.names.size - shared);
+              if (!best || score > best.score) best = { score, classes: c.classes };
+            }
+            return best && best.score >= 0.5 ? pick(best.classes) : [];
+          };
 
           const renames = new Map();
           const lines = (await get(CHANGES)).split(/\r?\n/);
@@ -59,7 +90,7 @@ jobs:
                 }
               }
             }
-            return [...seen].filter((c) => live.has(c));
+            return [...new Set([...seen].flatMap((c) => (live.has(c) ? [c] : byModule(c))))];
           };
 
           const report = [];
