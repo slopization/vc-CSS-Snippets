@@ -1,15 +1,13 @@
 /**
-* @name CompactButtons
-* @description Makes sidebar buttons more... compact
-*/
+ * @name Compact DM Buttons
+ * @description Packs the DM sidebar buttons and group DMs into a compact icon grid
+ */
 
 .scroller__99e7c[data-list-id^='private-channels-uid_'] {
-  scrollbar-width: 0;
-  scrollbar-color: transparent;
+  scrollbar-width: none;
 
   > .content_d125d2 {
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
     align-content: flex-start;
     justify-content: space-evenly;
@@ -23,7 +21,6 @@
 
     > .friendsButtonContainer_e6b769,
     > div:nth-of-type(3),
-    > .channel__972a0:not(.dm__972a0),
     > .wrapper__553bf {
       margin: 0;
     }
@@ -47,17 +44,15 @@
           }
         }
 
-        > .numberBadge__463b7 {
-          position: absolute;
-          left: 17.5px;
-          bottom: 0;
-          transform: scale(0.7);
-        }
-
+        > .numberBadge__463b7,
         > .newBadge__4ed1a {
           position: absolute;
           bottom: 0;
           transform: scale(0.7);
+        }
+
+        > .numberBadge__463b7 {
+          left: 17.5px;
         }
       }
     }
