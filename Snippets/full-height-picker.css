@@ -1,0 +1,8 @@
+/**
+ * @name Full Height Picker
+ * @description Stretches the GIF, sticker and emoji picker to the window height
+ */
+
+[class^='positionContainer_'] {
+  height: calc(100vh - 180px);
+}
