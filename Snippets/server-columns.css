@@ -18,13 +18,13 @@
     width: var(--custom-guild-list-width);
   }
 
-  .scroller_5dqHTG,
-  .folderGroup_RTMSuZ.isExpanded_RTMSuZ {
+  .scroller_5dqHTG {
     display: grid;
     grid-template-columns: repeat(var(--server-columns), var(--server-column-cell));
     grid-auto-rows: min-content;
     justify-content: center;
     align-content: start;
+    align-items: start;
     column-gap: 0 !important;
     row-gap: var(--space-xs);
   }
@@ -35,25 +35,17 @@
     --custom-guild-list-width: var(--server-column-cell);
   }
 
-  .scroller_5dqHTG > [role='group'],
-  .isExpanded_RTMSuZ > .folderGuildsList_RTMSuZ {
+  .scroller_5dqHTG > [role='group'] {
     display: contents;
   }
 
   .scroller_5dqHTG > :not(.listItem_rwEpIL, .tutorialContainer_1IyMuq, .folderGroup_RTMSuZ, [role='group']),
-  .scroller_5dqHTG > .listItem_rwEpIL:has(> .guildSeparator_3WHVfy),
-  .folderGroup_RTMSuZ.isExpanded_RTMSuZ,
-  .folderEndWrapper_nL08_v {
+  .scroller_5dqHTG > .listItem_rwEpIL:has(> .guildSeparator_3WHVfy) {
     grid-column: 1 / -1;
     width: auto !important;
   }
 
   .guildSeparator_3WHVfy {
     width: calc(100% - var(--server-column-gap));
-  }
-
-  .folderGroup_RTMSuZ.isExpanded_RTMSuZ > .folderGroupBackground_RTMSuZ {
-    inset: 0 calc(var(--server-column-gap) / 4);
-    width: auto;
   }
 }
