@@ -1,0 +1,60 @@
+/**
+ * @name Better Message Buttons
+ * @description Lays the message buttons out in a grid with Reply and Edit split off (based on Andrew6rant's theme)
+ */
+
+:root {
+  --msg-solo-button-width: 36px;
+  --msg-grid-button-padding: 32px;
+  --msg-grid-columns: 2;
+  --msg-button-height: 64px;
+  --msg-button-border-radius: 8px;
+  --msg-section-spacing: 12px;
+  --msg-offset-Y: 0px;
+}
+
+div[class^='buttonsInner_'] {
+  grid: repeat(var(--msg-grid-columns), var(--msg-grid-button-padding)) / auto-flow var(--msg-grid-button-padding);
+  grid-auto-flow: column;
+  transform: translateX(calc((var(--msg-section-spacing) / 2 + var(--msg-solo-button-width)) * -1))
+    translateY(calc(var(--msg-offset-Y) * -1));
+  border-radius: var(--msg-button-border-radius);
+
+  &:has(div[aria-label='Reply']:hover, div[aria-label='Edit']:hover) {
+    border: 1px solid var(--border-subtle);
+    box-shadow: var(--elevation-stroke);
+  }
+
+  &:has(div[aria-label='Edit']):has(div[aria-label='Reply']) {
+    transform: translateX(calc((var(--msg-section-spacing) + var(--msg-solo-button-width)) * -2));
+  }
+
+  &:has(div[aria-label='Edit']) div[aria-label='Reply'] {
+    right: calc((var(--msg-section-spacing) + var(--msg-solo-button-width)) * -2);
+  }
+}
+
+div[aria-label='Reply'],
+div[aria-label='Edit'] {
+  order: 1;
+  grid-row: span 2;
+  position: absolute;
+  right: calc((var(--msg-section-spacing) + var(--msg-solo-button-width)) * -1);
+  width: var(--msg-solo-button-width);
+  height: var(--msg-button-height);
+  border: 1px solid var(--border-muted);
+  border-radius: var(--msg-button-border-radius);
+  background: var(--background-surface-high);
+  box-shadow: var(--shadow-low);
+
+  &:hover {
+    border: 1px solid var(--border-subtle);
+    background: var(--background-surface-high);
+    box-shadow: var(--elevation-stroke), var(--elevation-medium);
+    opacity: 1;
+  }
+}
+
+.popover_f84418 > .separator_f84418 {
+  display: none;
+}
