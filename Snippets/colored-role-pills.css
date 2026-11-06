@@ -1,5 +1,6 @@
-/*
- * @name, @description colored role pills
+/**
+ * @name Colored Role Pills
+ * @description Tints each role pill with its role color
  */
 
 [class^='role_'] {
@@ -13,13 +14,10 @@
     > [class^='roleCircle_']::before {
       content: '';
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+      inset: 0;
+      z-index: 0;
       background-color: inherit;
       opacity: 0.2;
-      z-index: 0;
     }
   }
 
@@ -28,7 +26,6 @@
   }
 
   [class^='roleRemoveIcon_'] {
-    left: calc(4px + /* Pill padding */ 1px + /* "Remove Role" */ 4px + /* Circle margin */ 12px / 2);
-    /* Circle size */
+    left: 15px;
   }
 }
