@@ -1,0 +1,83 @@
+/**
+ * @name Bubble Usernames
+ * @description Wraps usernames in a tinted bubble, including gradient role colors
+ */
+
+:root {
+  --username-vertical-padding: 0;
+  --username-horizontal-padding: 6px;
+  --username-border-radius: 5px;
+  --username-plugin-suffix: '| @';
+}
+
+.vc-smyn-suffix {
+  color: currentColor;
+  opacity: 0.5;
+
+  &::before {
+    content: var(--username-plugin-suffix);
+  }
+
+  &::after {
+    content: '';
+  }
+}
+
+.header_c19a55 {
+  margin-bottom: 4px;
+}
+
+.username_c19a55 {
+  padding: var(--username-vertical-padding) var(--username-horizontal-padding);
+  border-radius: var(--username-border-radius);
+  text-decoration: none;
+
+  &:not(.convenienceGlowGradient_e5de78) {
+    background: color-mix(in srgb, currentColor 20%, transparent);
+
+    &:hover {
+      text-decoration: none;
+      background: color-mix(in srgb, currentColor 30%, transparent);
+    }
+  }
+}
+
+.convenienceGlowGradient_e5de78 {
+  --bubble-gradient: linear-gradient(
+    90deg,
+    var(--custom-gradient-color-1),
+    var(--custom-gradient-color-2),
+    var(--custom-gradient-color-3)
+  );
+  --bubble-tint: 20%;
+
+  z-index: 0;
+
+  &,
+  .vc-smyn-suffix {
+    background-image: var(--bubble-gradient);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  &:hover {
+    --bubble-tint: 30%;
+
+    text-decoration: none !important;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    border-radius: inherit;
+    transition: background 0.2s ease;
+    background: linear-gradient(
+      90deg,
+      color-mix(in srgb, var(--custom-gradient-color-1) var(--bubble-tint), transparent),
+      color-mix(in srgb, var(--custom-gradient-color-2) var(--bubble-tint), transparent),
+      color-mix(in srgb, var(--custom-gradient-color-3) var(--bubble-tint), transparent)
+    );
+  }
+}
