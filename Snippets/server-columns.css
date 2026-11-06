@@ -5,12 +5,8 @@
 
 :root body {
   --server-columns: 3;
-  --server-column-gap: 12px;
-  --server-column-cell: calc(var(--guildbar-avatar-size) + var(--server-column-gap));
-  --custom-guild-list-width: calc(
-    var(--server-column-cell) * var(--server-columns) + var(--custom-guild-list-padding) * 2 -
-      var(--server-column-gap) + var(--border-thickness, 0px) * 2
-  );
+  --server-column-cell: calc(var(--guildbar-avatar-size) + var(--custom-guild-list-padding) * 2);
+  --custom-guild-list-width: calc(var(--server-column-cell) * var(--server-columns) + var(--border-thickness, 0px) * 2);
   --server-list-extra: calc(var(--server-column-cell) * (var(--server-columns) - 1));
 
   .sidebar_pog62O {
@@ -42,11 +38,12 @@
     align-items: start;
     column-gap: 0 !important;
     row-gap: var(--space-xs);
+    scrollbar-width: none;
+    scrollbar-gutter: auto;
   }
 
   .scroller_5dqHTG > *,
   .scroller_5dqHTG > [role='group'] > * {
-    --custom-guild-list-padding: calc(var(--server-column-gap) / 2);
     --custom-guild-list-width: var(--server-column-cell);
   }
 
@@ -66,6 +63,6 @@
   }
 
   .guildSeparator_3WHVfy {
-    width: calc(100% - var(--server-column-gap));
+    width: calc(100% - var(--custom-guild-list-padding) * 2);
   }
 }

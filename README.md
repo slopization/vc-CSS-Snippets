@@ -43,12 +43,12 @@ imply any affiliation with or endorsement by Discord Inc.
 
 The links use the `refs/heads/main` form; the shorter `main/` form did not load in Vencord.
 
-To change the number of server columns, add this below the imports:
+Each server column is as wide as Discord's own server list, and the channel list keeps its usual width. To change the
+number of server columns, add this below the imports:
 
 ```css
 :root body {
   --server-columns: 3;
-  --server-column-gap: 12px;
 }
 ```
 
