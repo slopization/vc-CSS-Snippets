@@ -15,11 +15,17 @@
   --gDM-4: linear-gradient(to right, rgb(68, 105, 68), transparent);
   --gDM-5: linear-gradient(to right, rgb(60, 90, 130), transparent);
   --gDM-6: linear-gradient(to right, rgb(95, 65, 125), transparent);
+  --gDM-name-1: oklab(74.2% 0.114 0.042);
+  --gDM-name-2: oklab(80.4% 0.054 0.098);
+  --gDM-name-3: oklab(89% -0.019 0.136);
+  --gDM-name-4: oklab(80.4% -0.112 0.081);
+  --gDM-name-5: oklab(76.4% -0.034 -0.089);
+  --gDM-name-6: oklab(76.8% 0.075 -0.088);
   --gDM-border-radius: 12px;
 }
 
-ul > li > [class*='interactive_'],
-div > [class*='layout_'] {
+[data-list-id^='private-channels'] li > [class*='interactive_'],
+[class*='memberInner_'][class*='layout_'] {
   margin: 0.3px;
   border-radius: var(--gDM-border-radius);
 }
@@ -28,29 +34,43 @@ div > [class*='layout_'] {
   width: 100%;
 }
 
-[data-list-id^='private-channels'] li {
-  &:nth-child(6n + 1 of [class*='dm_']) [class^='link_'] {
-    background: var(--gDM-1);
+[data-list-id^='private-channels'] li[class*='dm_'] {
+  &:nth-child(6n + 1 of [class*='dm_']) {
+    --gDM-row: var(--gDM-1);
+    --gDM-name: var(--gDM-name-1);
   }
 
-  &:nth-child(6n + 2 of [class*='dm_']) [class^='link_'] {
-    background: var(--gDM-2);
+  &:nth-child(6n + 2 of [class*='dm_']) {
+    --gDM-row: var(--gDM-2);
+    --gDM-name: var(--gDM-name-2);
   }
 
-  &:nth-child(6n + 3 of [class*='dm_']) [class^='link_'] {
-    background: var(--gDM-3);
+  &:nth-child(6n + 3 of [class*='dm_']) {
+    --gDM-row: var(--gDM-3);
+    --gDM-name: var(--gDM-name-3);
   }
 
-  &:nth-child(6n + 4 of [class*='dm_']) [class^='link_'] {
-    background: var(--gDM-4);
+  &:nth-child(6n + 4 of [class*='dm_']) {
+    --gDM-row: var(--gDM-4);
+    --gDM-name: var(--gDM-name-4);
   }
 
-  &:nth-child(6n + 5 of [class*='dm_']) [class^='link_'] {
-    background: var(--gDM-5);
+  &:nth-child(6n + 5 of [class*='dm_']) {
+    --gDM-row: var(--gDM-5);
+    --gDM-name: var(--gDM-name-5);
   }
 
-  &:nth-child(6n of [class*='dm_']) [class^='link_'] {
-    background: var(--gDM-6);
+  &:nth-child(6n of [class*='dm_']) {
+    --gDM-row: var(--gDM-6);
+    --gDM-name: var(--gDM-name-6);
+  }
+
+  [class^='link_'] {
+    background: var(--gDM-row);
+  }
+
+  [class^='name_'] {
+    color: var(--gDM-name) !important;
   }
 }
 
