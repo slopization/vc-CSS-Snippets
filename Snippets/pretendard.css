@@ -5,8 +5,26 @@
 
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css');
 
-:not(code, code *) {
-  font-family: 'Pretendard Variable', sans-serif !important;
+:root body {
+  --pretendard: 'Pretendard Variable', Pretendard, sans-serif;
+  --font-primary: var(--pretendard);
+  --font-display: var(--pretendard);
+  --font-headline: var(--pretendard);
+  --primitive-typography-family-dm-sans: var(--pretendard);
+  --primitive-typography-family-rethink-sans: var(--pretendard);
+  --typography-display-family: var(--pretendard);
+  --typography-headline-family: var(--pretendard);
+  --typography-body-family: var(--pretendard);
+  --typography-link-family: var(--pretendard);
+  --typography-label-family: var(--pretendard);
+  --typography-button-family: var(--pretendard);
+  --typography-tooltip-family: var(--pretendard);
+  --typography-feedback-family: var(--pretendard);
+  --typography-toggle-switch-family: var(--pretendard);
+  --typography-checkbox-radio-family: var(--pretendard);
+  --typography-input-dropdown-family: var(--pretendard);
+
+  font-family: var(--pretendard);
 }
 
 .messageContent_2i8Bfm {
