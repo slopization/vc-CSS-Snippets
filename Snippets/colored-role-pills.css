@@ -3,15 +3,14 @@
  * @description Tints each role pill with its role color
  */
 
-[class^='role_'] {
+.role_nie4FD {
   position: relative;
   overflow: hidden;
 
-  > [class^='roleRemoveButton_'],
-  > div > [class^='roleRemoveButtonCanRemove_'] {
+  .roleRemoveButton_nie4FD {
     position: static;
 
-    > [class^='roleCircle_']::before {
+    :is(.roleCircle_7RsUnm, .roleDot_nie4FD)::before {
       content: '';
       position: absolute;
       inset: 0;
@@ -21,11 +20,11 @@
     }
   }
 
-  > [class^='roleName_'] {
+  .roleName_nie4FD {
     z-index: 1;
   }
 
-  [class^='roleRemoveIcon_'] {
+  .roleRemoveIcon_nie4FD {
     left: 15px;
   }
 }
