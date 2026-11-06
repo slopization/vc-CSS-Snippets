@@ -45,6 +45,11 @@
     width: auto !important;
   }
 
+  .scroller_5dqHTG > .tutorialContainer_1IyMuq:first-child {
+    grid-column: 1 / -1;
+    justify-self: center;
+  }
+
   .guildSeparator_3WHVfy {
     width: calc(100% - var(--server-column-gap));
   }
