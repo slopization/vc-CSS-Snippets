@@ -3,28 +3,26 @@
  * @description Tints each role pill with its role color
  */
 
-.role_nie4FD {
+:is(.role_nie4FD, .role_xL50-d) {
   position: relative;
   overflow: hidden;
+  isolation: isolate;
 
-  .roleRemoveButton_nie4FD {
-    position: static;
-
-    :is(.roleCircle_7RsUnm, .roleDot_nie4FD)::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      z-index: 0;
-      background-color: inherit;
-      opacity: 0.2;
-    }
+  .roleCircle_7RsUnm::before,
+  :is(.roleDot_nie4FD, .roleDot_xL50-d)::before {
+    content: '';
+    position: absolute;
+    inset: -100vmax;
+    z-index: -1;
+    opacity: 0.2;
+    pointer-events: none;
   }
 
-  .roleName_nie4FD {
-    z-index: 1;
+  .roleCircle_7RsUnm::before {
+    background-color: inherit;
   }
 
-  .roleRemoveIcon_nie4FD {
-    left: 15px;
+  :is(.roleDot_nie4FD, .roleDot_xL50-d)::before {
+    background-color: currentColor;
   }
 }
