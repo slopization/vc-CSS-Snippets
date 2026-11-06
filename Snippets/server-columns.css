@@ -11,6 +11,21 @@
     var(--server-column-cell) * var(--server-columns) + var(--custom-guild-list-padding) * 2 -
       var(--server-column-gap) + var(--border-thickness, 0px) * 2
   );
+  --server-list-extra: calc(var(--server-column-cell) * (var(--server-columns) - 1));
+
+  .sidebar_pog62O {
+    width: calc(var(--custom-guild-sidebar-width) + var(--server-list-extra));
+  }
+
+  .sidebarList_pog62O {
+    width: calc(var(--custom-guild-sidebar-width) + var(--server-list-extra) - var(--custom-guild-list-width) - 1px);
+  }
+}
+
+@container body style(--small-user-panel: on) {
+  :root body .panels_pog62O {
+    width: calc(var(--custom-guild-sidebar-width) + var(--server-list-extra) - var(--custom-guild-list-width));
+  }
 }
 
 .wrapper_5dqHTG {
