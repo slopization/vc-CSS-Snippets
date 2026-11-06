@@ -61,9 +61,6 @@ latest version right after it is pushed:
 1. In the **Network** tab, check **Disable cache**.
 1. Keep DevTools open and press `Ctrl+R`.
 
-Close DevTools afterwards to turn caching back on. Another way is to append a query to the import URL, such as
-`server-columns.css?v=2`, and raise the number each time.
-
 ## Class updates
 
 Discord renames its CSS classes with most updates. The **Update Classes** workflow in the Actions tab replaces every
