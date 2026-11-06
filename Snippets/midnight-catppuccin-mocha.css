@@ -2306,3 +2306,9 @@ body {
   --purple-4: hsl(267deg, 84%, 76%);
   --purple-5: hsl(267deg, 84%, 71%);
 }
+
+body,
+.theme-dark:not(.custom-user-profile-theme),
+.theme-light:not(.custom-user-profile-theme) {
+  --notice-text-critical: var(--red-1);
+}
