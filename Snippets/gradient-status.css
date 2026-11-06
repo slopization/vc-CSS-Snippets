@@ -23,23 +23,23 @@ div > [class*='layout_'] {
 }
 
 :is([class^='link_'], [class^='memberInner']) {
-  &:has([mask*='online']) {
+  &:has([role='img'][aria-label$=', 온라인'], [role='img'][aria-label$=', Online'], rect[fill='#45a366']) {
     background: var(--gDM-online);
   }
 
-  &:has([mask*='offline']) {
+  &:has([role='img'][aria-label$=', 오프라인'], [role='img'][aria-label$=', Offline'], rect[fill='#84858d']) {
     background: var(--gDM-offline);
   }
 
-  &:has([mask*='dnd']) {
+  &:has([role='img'][aria-label$=', 방해 금지'], [role='img'][aria-label$=', Do Not Disturb'], rect[fill='#da3e44']) {
     background: var(--gDM-dnd);
   }
 
-  &:has([mask*='idle']) {
+  &:has([role='img'][aria-label$=', 자리 비움'], [role='img'][aria-label$=', Idle'], rect[fill='#ffc04e']) {
     background: var(--gDM-idle);
   }
 
-  &:has([mask*='streaming']) {
+  &:has([role='img'][aria-label$=', Streaming'], rect[fill='#9147ff'], rect[fill='#593695']) {
     background: var(--gDM-streaming);
   }
 }
