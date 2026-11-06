@@ -1,0 +1,8 @@
+/**
+ * @name Hide Quests
+ * @description Hides the Quests UI in the sidebar panels
+ */
+
+section[class^='panels_'] > div[class^='mask_'] {
+  display: none;
+}
