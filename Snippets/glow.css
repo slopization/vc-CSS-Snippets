@@ -1,0 +1,33 @@
+/**
+ * @name Glow
+ * @description Adds an accent glow to unread markers, badges, sliders and muted icons (based on refact0r's css-snippets)
+ */
+
+.divider__908e2.isUnread__908e2 .unreadPill__908e2,
+.folderGroup__48112.isExpanded__48112 .folderIconWrapper__48112 path,
+path[fill='var(--status-danger)'],
+.redIcon_e0923d,
+.strikethrough_e0923d {
+  filter: drop-shadow(0 0 4px var(--accent-2));
+}
+
+.folderGroup__48112.isExpanded__48112 .folderIconWrapper__48112 svg,
+.bar_ec237e {
+  overflow: visible;
+}
+
+.barFill_ec237e {
+  border-radius: 4px;
+}
+
+.divider__908e2.isUnread__908e2,
+.newMessagesBar__0f481,
+.numberBadge__463b7,
+.mention__3b95d,
+.barFill_ec237e {
+  box-shadow: 0 0 5px 0.3px var(--accent-2);
+}
+
+.divider__908e2.isUnread__908e2 .content__908e2 {
+  text-shadow: 0 0 5px var(--accent-2);
+}
