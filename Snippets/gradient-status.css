@@ -1,6 +1,6 @@
 /**
  * @name Gradient Status
- * @description Tints DM and member list rows with a gradient in the user's status color (based on ukriu's cssCord)
+ * @description Tints DM rows with varied gradients and member list rows with the user's status color (based on ukriu's cssCord)
  */
 
 :root {
@@ -9,6 +9,12 @@
   --gDM-dnd: linear-gradient(to right, rgb(130, 70, 70), transparent);
   --gDM-idle: linear-gradient(to right, rgb(135, 105, 75), transparent);
   --gDM-streaming: linear-gradient(to right, rgb(63, 33, 88), transparent);
+  --gDM-1: linear-gradient(to right, rgb(130, 70, 70), transparent);
+  --gDM-2: linear-gradient(to right, rgb(135, 95, 60), transparent);
+  --gDM-3: linear-gradient(to right, rgb(125, 115, 60), transparent);
+  --gDM-4: linear-gradient(to right, rgb(68, 105, 68), transparent);
+  --gDM-5: linear-gradient(to right, rgb(60, 90, 130), transparent);
+  --gDM-6: linear-gradient(to right, rgb(95, 65, 125), transparent);
   --gDM-border-radius: 12px;
 }
 
@@ -22,7 +28,33 @@ div > [class*='layout_'] {
   width: 100%;
 }
 
-:is([class^='link_'], [class^='memberInner']) {
+[data-list-id^='private-channels'] li {
+  &:nth-child(6n + 1 of [class*='dm_']) [class^='link_'] {
+    background: var(--gDM-1);
+  }
+
+  &:nth-child(6n + 2 of [class*='dm_']) [class^='link_'] {
+    background: var(--gDM-2);
+  }
+
+  &:nth-child(6n + 3 of [class*='dm_']) [class^='link_'] {
+    background: var(--gDM-3);
+  }
+
+  &:nth-child(6n + 4 of [class*='dm_']) [class^='link_'] {
+    background: var(--gDM-4);
+  }
+
+  &:nth-child(6n + 5 of [class*='dm_']) [class^='link_'] {
+    background: var(--gDM-5);
+  }
+
+  &:nth-child(6n of [class*='dm_']) [class^='link_'] {
+    background: var(--gDM-6);
+  }
+}
+
+[class^='memberInner'] {
   &:has([role='img'][aria-label$=', 온라인'], [role='img'][aria-label$=', Online'], rect[fill='#45a366']) {
     background: var(--gDM-online);
   }
