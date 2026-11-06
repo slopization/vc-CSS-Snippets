@@ -1,0 +1,48 @@
+/**
+ * @name Accent
+ * @description Cyan accent palette for midnight (based on refact0r's css-snippets)
+ */
+
+:root {
+  --accent-1: hsl(190, 80%, 60%);
+  --accent-2: hsl(190, 80%, 48%);
+  --accent-3: hsl(190, 80%, 42%);
+  --accent-4: hsl(190, 80%, 36%);
+  --accent-5: hsl(190, 80%, 30%);
+  --online: var(--accent-2);
+  --mention: hsla(190, 80%, 52%, 0.1);
+  --mention-hover: hsla(190, 80%, 52%, 0.05);
+}
+
+.activeButtonChild_aa63ab {
+  color: var(--accent-2);
+}
+
+.folderGroup__48112.isExpanded__48112 .folderIconWrapper__48112 svg {
+  color: var(--accent-2) !important;
+}
+
+.divider__908e2 {
+  --divider-color: var(--accent-3);
+}
+
+.message__5126c.mentioned__5126c::before {
+  background: var(--accent-3) !important;
+}
+
+.theme-dark {
+  --control-brand-foreground: var(--accent-2);
+  --mention-background: var(--mention);
+  --mention-foreground: var(--accent-1);
+
+  --brand-430: var(--accent-3);
+  --brand-500: var(--accent-3);
+  --brand-560: var(--accent-4);
+  --brand-600: var(--accent-5);
+
+  --green-330: var(--accent-1);
+  --green-360: var(--accent-3);
+  --green-430: var(--accent-4);
+
+  --brand-experiment-15a: var(--mention);
+}
