@@ -33,7 +33,7 @@ jobs:
           const ENTRY = 'https://raw.githubusercontent.com/Discord-Datamining/Discord-Datamining/master/current.js';
           const CHANGES = 'https://raw.githubusercontent.com/SyndiShanX/Update-Classes/main/Changes.txt';
           const HASHED = /\.(-?[A-Za-z][\w-]*?_(?:_[0-9a-f]{5}|[0-9a-f]{6}|[A-Za-z0-9_-]{6}))(?![\w-])/g;
-          const MODULE = /(\d+)\([\w$]+(?:,[\w$]+){0,2}\)\{(?:[\w$]+\.r\()?[\w$]+\.exports=\{([^{}]*)\}/g;
+          const MODULE = /(\d+)\([\w$]+(?:,[\w$]+){0,2}\)\{(?:(?:[\w$]+\.r\()?[\w$]+\.exports=|var [\w$]+=)\{([^{}]*)\}/g;
           const PAIR = /(?:"([^"]+)"|([A-Za-z_$][\w$]*)):"([^"]*)"/g;
           const readable = (c) => c.replace(/_[A-Za-z0-9_-]{6}$/, '');
 
@@ -63,9 +63,17 @@ jobs:
           };
           scan(entry);
           const list = [...files];
-          for (let i = 0; i < list.length; i += 16) {
-            await Promise.all(list.slice(i, i + 16).map((f) => get(`${ASSETS}/assets/${f}`).then(scan, () => {})));
-          }
+          let failed = 0;
+          const fetchChunk = async (f) => {
+            for (let attempt = 0; attempt < 3; attempt++) {
+              try {
+                return scan(await get(`${ASSETS}/assets/${f}`));
+              } catch {}
+            }
+            failed++;
+          };
+          for (let i = 0; i < list.length; i += 16) await Promise.all(list.slice(i, i + 16).map(fetchChunk));
+          if (failed > 5) throw new Error(`${failed} chunks failed to download; refusing to rewrite classes`);
 
           const classSets = (d) =>
             new Map(Object.entries(d).map(([mid, mod]) => [mid, [...new Set(Object.values(mod).flatMap((v) => v.split(' ').filter(Boolean)))]]));
