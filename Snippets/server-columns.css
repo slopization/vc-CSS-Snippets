@@ -62,7 +62,8 @@
     width: auto !important;
   }
 
-  .scroller_5dqHTG > .tutorialContainer_1IyMuq:first-child {
+  .scroller_5dqHTG > .tutorialContainer_1IyMuq:first-child,
+  .scroller_5dqHTG .listItem_rwEpIL:has(.favoriteIcon_850pDF) {
     grid-column: 1 / -1;
     justify-self: center;
   }
