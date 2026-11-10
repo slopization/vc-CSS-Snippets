@@ -63,11 +63,6 @@ latest version right after it is pushed:
 1. In the **Network** tab, check **Disable cache**.
 1. Keep DevTools open and press `Ctrl+R`.
 
-## Class updates
-
-Discord renames its CSS classes with most updates. The **Update Classes** workflow in the Actions tab replaces every
-renamed class it can map to a single new name, commits the result, and lists the rest in its run summary.
-
 ## Usage
 
 Feel free to use any of the snippets provided in this repository. However, be aware that you do so at your own risk.
