@@ -18,40 +18,65 @@ jobs:
     steps:
       - uses: actions/checkout@v7
 
+      - uses: actions/cache/restore@v6
+        with:
+          path: .class-cache
+          key: class-dump-${{ github.run_id }}
+          restore-keys: class-dump-
+
       - name: Replace renamed Discord classes
         run: |
           node --input-type=module - <<'EOF'
-          import { appendFile, readdir, readFile, writeFile } from 'node:fs/promises';
+          import { appendFile, mkdir, readdir, readFile, writeFile } from 'node:fs/promises';
 
-          const DUMPS = 'https://raw.githubusercontent.com/itmesarah/DiscordClasses/main';
+          const ASSETS = 'https://canary.discord.com';
+          const ENTRY = 'https://raw.githubusercontent.com/Discord-Datamining/Discord-Datamining/master/current.js';
           const CHANGES = 'https://raw.githubusercontent.com/SyndiShanX/Update-Classes/main/Changes.txt';
           const HASHED = /\.(-?[A-Za-z][\w-]*?_(?:_[0-9a-f]{5}|[0-9a-f]{6}|[A-Za-z0-9_-]{6}))(?![\w-])/g;
+          const MODULE = /(\d+)\([\w$]+(?:,[\w$]+){0,2}\)\{(?:[\w$]+\.r\()?[\w$]+\.exports=\{([^{}]*)\}/g;
+          const PAIR = /(?:"([^"]+)"|([A-Za-z_$][\w$]*)):"([^"]*)"/g;
           const readable = (c) => c.replace(/_[A-Za-z0-9_-]{6}$/, '');
 
           const get = async (url) => {
-            const response = await fetch(url);
+            const response = await fetch(url, { headers: { 'user-agent': 'Mozilla/5.0' } });
             if (!response.ok) throw new Error(`${response.status} ${url}`);
             return response.text();
           };
 
-          const classSets = (dump) => {
-            const out = new Map();
-            for (const [mid, mod] of Object.entries(dump)) {
-              if (!mod || typeof mod !== 'object') continue;
-              const values = Object.values(mod).filter((v) => typeof v === 'string');
-              if (values.length) out.set(mid, [...new Set(values.flatMap((v) => v.split(' ').filter(Boolean)))]);
+          const entry = await get(ENTRY);
+          const start = entry.indexOf('p.u=e=>');
+          const names = entry.slice(start, entry.indexOf('+".js"', start));
+          const files = new Set();
+          for (const [, id, literal, hashed] of names.matchAll(/(\d+)===e\)return"(?:(\d+\.[0-9a-f]{16}\.js)|"\+e\+"(\.[0-9a-f]{16}\.js))"/g)) {
+            files.add(literal ?? id + hashed);
+          }
+          for (const [, hash] of names.slice(names.lastIndexOf('return""+({')).matchAll(/\d+:"([0-9a-f]{16})"/g)) files.add(`${hash}.js`);
+          for (const [, name] of (await get(`${ASSETS}/app`)).matchAll(/\/assets\/([\w.-]+\.js)/g)) files.add(name);
+
+          const dump = {};
+          const scan = (body) => {
+            for (const [, mid, inner] of body.matchAll(MODULE)) {
+              const mod = {};
+              for (const [, quoted, bare, value] of inner.matchAll(PAIR)) mod[quoted ?? bare] = value;
+              if (Object.values(mod).some((v) => /_[A-Za-z0-9_-]{6}(\s|$)/.test(v))) dump[mid] = mod;
             }
-            return out;
           };
+          scan(entry);
+          const list = [...files];
+          for (let i = 0; i < list.length; i += 16) {
+            await Promise.all(list.slice(i, i + 16).map((f) => get(`${ASSETS}/assets/${f}`).then(scan, () => {})));
+          }
 
-          const previous = classSets(JSON.parse(await get(`${DUMPS}/stableclasses.json`)));
-          const current = classSets(JSON.parse(await get(`${DUMPS}/canaryclasses.json`)));
+          const classSets = (d) =>
+            new Map(Object.entries(d).map(([mid, mod]) => [mid, [...new Set(Object.values(mod).flatMap((v) => v.split(' ').filter(Boolean)))]]));
+          const current = classSets(dump);
           const live = new Set([...current.values()].flat());
-          if (live.size < 10000) throw new Error(`class list looks truncated: ${live.size} classes`);
+          if (live.size < 10000) throw new Error(`class dump looks truncated: ${live.size} classes`);
 
+          const previous = classSets(JSON.parse(await readFile('.class-cache/classes.json', 'utf8').catch(() => '{}')));
           const owner = new Map();
           for (const [mid, classes] of previous) for (const c of classes) if (!owner.has(c)) owner.set(c, mid);
-          const currentNames = [...current].map(([mid, classes]) => ({ classes, names: new Set(classes.map(readable)) }));
+          const currentNames = [...current.values()].map((classes) => ({ classes, names: new Set(classes.map(readable)) }));
 
           const byModule = (cls) => {
             const mid = owner.get(cls);
@@ -60,13 +85,13 @@ jobs:
             const pick = (classes) => [...new Set(classes.filter((c) => readable(c) === name))];
             const same = current.get(mid);
             if (same && pick(same).length) return pick(same);
-            const names = new Set(previous.get(mid).map(readable));
+            const prevNames = new Set(previous.get(mid).map(readable));
             let best = null;
             for (const c of currentNames) {
               if (!c.names.has(name)) continue;
               let shared = 0;
-              for (const n of names) if (c.names.has(n)) shared++;
-              const score = shared / (names.size + c.names.size - shared);
+              for (const n of prevNames) if (c.names.has(n)) shared++;
+              const score = shared / (prevNames.size + c.names.size - shared);
               if (!best || score > best.score) best = { score, classes: c.classes };
             }
             return best && best.score >= 0.5 ? pick(best.classes) : [];
@@ -78,7 +103,6 @@ jobs:
             if (!renames.has(lines[i])) renames.set(lines[i], []);
             renames.get(lines[i]).push(lines[i + 1]);
           }
-
           const successors = (name) => {
             const seen = new Set([name]);
             const queue = [name];
@@ -110,10 +134,18 @@ jobs:
             if (replaced !== css) await writeFile(path, replaced);
           }
 
-          const summary = [`### Class update`, `${live.size} live classes`, '', ...new Set(report)].join('\n');
+          await mkdir('.class-cache', { recursive: true });
+          await writeFile('.class-cache/classes.json', JSON.stringify(dump));
+          const build = entry.match(/buildNumber:"(\d+)"|"BUILD_NUMBER","(\d+)"/)?.slice(1).find(Boolean) ?? 'unknown';
+          const summary = [`### Class update`, `build ${build}, ${live.size} live classes`, '', ...new Set(report)].join('\n');
           console.log(summary);
           if (process.env.GITHUB_STEP_SUMMARY) await appendFile(process.env.GITHUB_STEP_SUMMARY, `${summary}\n`);
           EOF
+
+      - uses: actions/cache/save@v6
+        with:
+          path: .class-cache
+          key: class-dump-${{ github.run_id }}
 
       - name: Commit updated snippets
         run: |
