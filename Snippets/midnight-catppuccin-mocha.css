@@ -2328,3 +2328,7 @@ body,
 .theme-light:not(.custom-user-profile-theme) {
   --notice-text-critical: var(--red-1);
 }
+
+.newBadge_SOY5H6 {
+  background-color: transparent !important;
+}
