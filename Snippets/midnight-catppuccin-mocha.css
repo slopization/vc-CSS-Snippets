@@ -2329,6 +2329,12 @@ body,
   --notice-text-critical: var(--red-1);
 }
 
-.newBadge_SOY5H6 {
+:is(.theme-dark, .theme-darker, .theme-midnight, .theme-light):not(.custom-user-profile-theme) {
+  --badge-primary-background: var(--accent-2);
+  --badge-primary-border: var(--accent-2);
+  --badge-primary-text: var(--text-0);
+}
+
+.newBadgeWrapper_SOY5H6 .newBadge_SOY5H6 {
   background-color: transparent !important;
 }
